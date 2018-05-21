@@ -18,6 +18,7 @@
 #define LISTENQ  1024  /* second argument to listen() */
 #define MAXLINE 1024   /* max length of a line */
 #define RIO_BUFSIZE 1024
+#define PORT 8080
 
 typedef struct {
     int rio_fd;                 /* descriptor for this buf */
@@ -379,7 +380,7 @@ void process(int fd, struct sockaddr_in *clientaddr){
 
 int main(int argc, char** argv){
     struct sockaddr_in clientaddr;
-    int default_port = 9999,
+    int default_port = PORT,
         listenfd,
         connfd;
     char buf[256];
